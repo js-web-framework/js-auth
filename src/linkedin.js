@@ -15,9 +15,9 @@ const addLinkedInStrategy = (passport, cbRoute, scope, config) => {
   }, (accessToken, refreshToken, profile, done) => {
     profile.refreshToken = refreshToken
     profile.accessToken = accessToken
-    done(null, profile)
-    return true
+    return done(null, profile)
   }))
+  return true
 }
 
 const makeAuth = (app, passport, func, handleRespond, route, cbRoute, scope, config) => {

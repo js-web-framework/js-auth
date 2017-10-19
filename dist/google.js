@@ -18,9 +18,9 @@ const addGoogleStrategy = (passport, cbRoute, config) => {
     passReqToCallback: true
   }, (request, accessToken, refreshToken, profile, done) => {
     profile.accessToken = accessToken;
-    done(null, profile);
-    return true;
+    return done(null, profile);
   }));
+  return true;
 };
 
 const makeAuth = (app, passport, func, handleRespond, route, cbRoute, scope, config) => {

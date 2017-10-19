@@ -19,9 +19,9 @@ const addTwitterStrategy = (passport, cbRoute, config) => {
   }, (token, tokenSecret, profile, done) => {
     profile.tokenSecret = tokenSecret;
     profile.token = token;
-    done(null, profile);
-    return true;
+    return done(null, profile);
   }));
+  return true;
 };
 
 const makeAuth = (app, passport, func, handleRespond, route, cbRoute, scope, config) => {

@@ -19,9 +19,9 @@ const addGitHubStrategy = (passport, cbRoute, config) => {
   }, (accessToken, refreshToken, profile, done) => {
     profile.accessToken = accessToken;
     profile.refreshToken = refreshToken;
-    done(null, profile);
-    return true;
+    return done(null, profile);
   }));
+  return true;
 };
 
 const makeAuth = (app, passport, func, handleRespond, route, cbRoute, scope, config) => {

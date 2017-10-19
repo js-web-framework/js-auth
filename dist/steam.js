@@ -18,9 +18,9 @@ const addSteamStrategy = (passport, cbRoute, config) => {
     returnURL: cbRoute
   }, (identifier, profile, done) => {
     profile.identifier = identifier;
-    done(null, profile);
-    return true;
+    return done(null, profile);
   }));
+  return true;
 };
 
 const makeAuth = (app, passport, func, handleRespond, route, cbRoute, scope, config) => {
