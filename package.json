@@ -1,0 +1,43 @@
+{
+  "name": "js-auth",
+  "version": "0.0.7",
+  "description": "",
+  "main": "./dist/oauth.js",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "npm run clean && mkdir dist && babel src -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/js-web-framework/js-auth.git"
+  },
+  "babel": {
+    "plugins": [
+      "transform-es2015-modules-commonjs"
+    ]
+  },
+  "keywords": [
+    "auth",
+    "js-web"
+  ],
+  "author": "Simon Madsen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/js-web-framework/js-auth/issues"
+  },
+  "homepage": "https://github.com/js-web-framework/js-auth#readme",
+  "dependencies": {
+    "passport": "^0.4.0",
+    "passport-facebook": "^2.1.1",
+    "passport-github2": "^0.1.11",
+    "passport-google-oauth2": "^0.1.6",
+    "passport-linkedin-oauth2": "^1.5.0",
+    "passport-steam": "^1.0.8",
+    "passport-twitter": "^1.0.4"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
+    "babel-register": "^6.22.0"
+  }
+}
