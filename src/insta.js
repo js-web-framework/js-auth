@@ -8,8 +8,8 @@ const addInstagramStrategy = (passport, cbRoute, scope, config) => {
   }
 
   passport.use(new InstagramStrategy({
-    clientID: config.Instagram_client_id,
-    clientSecret: config.Instagram_secret,
+    clientID: config.instagram_client_id,
+    clientSecret: config.instagram_secret,
     callbackURL: cbRoute
   }, (accessToken, refreshToken, profile, done) => {
     profile.refreshToken = refreshToken
@@ -24,7 +24,7 @@ const makeAuth = (app, passport, func, handleRespond, route, cbRoute, scope, con
   app.get(route, passport.authenticate('Instagram'))
 
   app.get(url.parse(cbRoute).pathname, (req, res, next) => {
-    passport.authenticate('Instagram', (err, data) => {
+    passport.authenticate('instagram', (err, data) => {
       req.body = data
       handleRespond(r => res.json(r), func, res, req)
     })(req, res, next)
