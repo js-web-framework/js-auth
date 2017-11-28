@@ -4,6 +4,7 @@ import twitterAuth from './twitter'
 import linkedinAuth from './linkedin'
 import githubAuth from './github'
 import steamAuth from './steam'
+import instaAuth from './insta'
 
 const passport = require('passport')
 
@@ -24,5 +25,8 @@ export const makeAuth = (app, config = {}, handleRespond) => ({
     githubAuth(app, passport, func, handleRespond, route, cbRoute, scope, config),
 
   steamAuth: (route, cbRoute, func, scope = null) =>
-    steamAuth(app, passport, func, handleRespond, route, cbRoute, scope, config)
+    steamAuth(app, passport, func, handleRespond, route, cbRoute, scope, config),
+
+  instaAuth: (route, cbRoute, func, scope = null) =>
+    instaAuth(app, passport, func, handleRespond, route, cbRoute, scope, config)
 })

@@ -29,6 +29,10 @@ var _steam = require('./steam');
 
 var _steam2 = _interopRequireDefault(_steam);
 
+var _insta = require('./insta');
+
+var _insta2 = _interopRequireDefault(_insta);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const passport = require('passport');
@@ -44,5 +48,7 @@ const makeAuth = exports.makeAuth = (app, config = {}, handleRespond) => ({
 
   githubAuth: (route, cbRoute, func, scope = null) => (0, _github2.default)(app, passport, func, handleRespond, route, cbRoute, scope, config),
 
-  steamAuth: (route, cbRoute, func, scope = null) => (0, _steam2.default)(app, passport, func, handleRespond, route, cbRoute, scope, config)
+  steamAuth: (route, cbRoute, func, scope = null) => (0, _steam2.default)(app, passport, func, handleRespond, route, cbRoute, scope, config),
+
+  instaAuth: (route, cbRoute, func, scope = null) => (0, _insta2.default)(app, passport, func, handleRespond, route, cbRoute, scope, config)
 });
